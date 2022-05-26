@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  background: var(--color-header-bg);
+  position: fixed;
+  box-shadow: var(--box-shadow);
+}
+
+.header_inner {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.main {
+  min-height: 100vh;
+  height: 100%;
+  font-family: var(--font-base);
+  background: var(--color-main-bg);
+  background-attachment: fixed;
+  color: var(--color-text);
+  padding-top: 4.5rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  .main {
+    padding-top: 1rem;
+  }
+}

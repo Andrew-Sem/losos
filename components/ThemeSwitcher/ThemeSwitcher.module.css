@@ -1,0 +1,27 @@
+.switcher_wrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.switcher {
+  cursor: pointer;
+  color: var(--color-text);
+  transition: background 0.2s linear;
+}
+
+.switcher:hover {
+  background: var(--color-icon-hov);
+}
+
+.light {
+  border-radius: 50%;
+  font-size: 35px;
+}
+
+.dark {
+  border-radius: 50%;
+  font-size: 35px;
+}

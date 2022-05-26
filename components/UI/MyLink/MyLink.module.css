@@ -1,0 +1,18 @@
+.a {
+  font-family: var(--font-base);
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+
+  margin: 0 1.5rem;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+
+  transition: color 0.2s linear;
+  color: var(--color-text);
+}
+
+.a:hover {
+  color: var(--color-link-hov);
+}
