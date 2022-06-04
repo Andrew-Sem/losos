@@ -4,11 +4,10 @@ import { BiSun } from "react-icons/bi";
 import { BsMoon } from "react-icons/bs";
 
 interface ThemeSwitcherProps {
-  isSmallScreen: boolean;
   styles?: string;
 }
 
-const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ isSmallScreen, styles }) => {
+const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ styles }) => {
   const [icon, setIcon] = useState("");
   useEffect(() => {
     const theme: string = window.localStorage.getItem("theme") || "light";
@@ -45,7 +44,6 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ isSmallScreen, styles }) => {
           />
         )}
       </div>
-      {isSmallScreen && <span>Go {icon}</span>}
     </div>
   );
 };

@@ -16,3 +16,10 @@
 .a:hover {
   color: var(--color-link-hov);
 }
+
+@media screen and (max-width: 650px) {
+  .a {
+    margin: 0;
+    font-size: 10px;
+  }
+}

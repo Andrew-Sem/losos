@@ -1,29 +1,41 @@
 import React, { FC } from "react";
 import MyLink from "../UI/MyLink/MyLink";
 import cl from "./Navbar.module.css";
-import { AiOutlineHome, AiOutlineTool, AiOutlineUser } from "react-icons/ai";
-import { CgMathPercent } from "react-icons/cg";
-import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { AiOutlineHome, AiOutlineUser, AiOutlineTool } from "react-icons/ai";
+import { GiCirclingFish } from "react-icons/gi";
+import { VscTools } from "react-icons/vsc";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 
 interface link {
   title: string;
   href: string;
-  losos: any;
+  icon: any;
 }
 
 const Navbar: FC = () => {
   const links: Array<link> = [
-    { title: "Home", href: "/", losos: <AiOutlineHome /> },
-    { title: "About", href: "/about", losos: <AiOutlineHome /> },
-    { title: "Session", href: "/session", losos: <AiOutlineHome /> },
-    { title: "Features", href: "/features", losos: <AiOutlineHome /> },
+    { title: "Home", href: "/", icon: <AiOutlineHome className={cl.icon} /> },
+    {
+      title: "About",
+      href: "/about",
+      icon: <AiOutlineUser className={cl.icon} />,
+    },
+    {
+      title: "Losos",
+      href: "/losos",
+      icon: <GiCirclingFish className={cl.icon} />,
+    },
+    {
+      title: "Features",
+      href: "/features",
+      icon: <VscTools className={cl.icon} />,
+    },
   ];
   return (
     <nav>
       <ul className={cl.navbar__widescreen}>
         <span>
-          <ThemeSwitcher isSmallScreen={false} />
+          <ThemeSwitcher />
         </span>
         <div className={cl.links__widescreen}>
           {links.map((link) => (
@@ -34,27 +46,12 @@ const Navbar: FC = () => {
         </div>
       </ul>
       <ul className={cl.navbar__smallscreen}>
-        <li className={cl.link__smallscreen}>
-          <AiOutlineHome className={cl.icon} />
-          <span className={cl.title}>Home</span>
-        </li>
-        <li className={cl.link__smallscreen}>
-          <AiOutlineUser className={cl.icon} />
-          <span className={cl.title}>About</span>
-        </li>
-        <li className={cl.link__smallscreen}>
-          {/* <RiMoneyDollarCircleLine className={cl.icon} />
-          <span className={cl.title}>Pricing</span> */}
-          <ThemeSwitcher isSmallScreen={true} styles={cl.icon} />
-        </li>
-        <li className={cl.link__smallscreen}>
-          <CgMathPercent className={cl.icon} />
-          <span className={cl.title}>Session</span>
-        </li>
-        <li className={cl.link__smallscreen}>
-          <AiOutlineTool className={cl.icon} />
-          <span className={cl.title}>Features</span>
-        </li>
+        {links.map((link) => (
+          <li key={link.href} className={cl.link__smallscreen}>
+            {link.icon}
+            <MyLink href={link.href} title={link.title} />
+          </li>
+        ))}
       </ul>
     </nav>
   );

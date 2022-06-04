@@ -84,6 +84,6 @@ a {
 
 @media screen and (max-width: 650px) {
   .container {
-    padding: 1rem;
+    padding: 0.3rem 1rem 0.3rem;
   }
 }
