@@ -5,13 +5,16 @@ import { FC } from "react";
 interface MyLinkProps {
   href: string;
   title: string;
+  className?: string;
+  icon?: React.FC;
   props?: any;
 }
 
-const MyLink: FC<MyLinkProps> = ({ href, title, props }) => {
+const MyLink: FC<MyLinkProps> = ({ href, title, icon, className, props }) => {
   return (
     <Link href={href}>
-      <a className={cl.a} {...props}>
+      <a className={[cl.a, className].join(" ")} {...props}>
+        {icon}
         {title}
       </a>
     </Link>

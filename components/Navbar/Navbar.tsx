@@ -47,9 +47,13 @@ const Navbar: FC = () => {
       </ul>
       <ul className={cl.navbar__smallscreen}>
         {links.map((link) => (
-          <li key={link.href} className={cl.link__smallscreen}>
-            {link.icon}
-            <MyLink href={link.href} title={link.title} />
+          <li key={link.href}>
+            <MyLink
+              href={link.href}
+              title={link.title}
+              icon={link.icon}
+              className={cl.link__smallscreen}
+            />
           </li>
         ))}
       </ul>
